@@ -151,19 +151,51 @@
         }
     }
 
-    
+    É possível saber o valor máximo e mínimo dos vários tipos de variáveis.
+    Para isso basta usar MAX e MIN da seguinte forma:
 
+    public class TestLimits {
+        public static void main(String args[]) {
+            // inteiros
+            byte largestByte = Byte.MAX_VALUE;
+            short largestShort = Short.MAX_VALUE;
+            int smallestInteger = Integer.MIN_VALUE;
+            long largestLong = Long.MAX_VALUE;
+
+            // virgula flutuante
+            float largestFloat = Float.MAX_VALUE;
+            double largestDouble = Double.MAX_VALUE;
+
+            // mostrar limites
+            System.out.println("Largest byte value: " + largestByte);
+            System.out.println("Largest short value: " + largestShort);
+            System.out.println("Smallest integer value: " + smallestInteger);
+            System.out.println("Largest long value: " + largestLong);
+
+            System.out.println("Largest float value: " + largestFloat);
+            System.out.println("Largest double value: " + largestDouble);
+        }
+    }
+
+    Estes métodos são "Wrappers". Uma classe wrapper faz com que os tipos
+    de dados primitivos (int, boolean, ...) possam ser usados como objetos.
+
+    Operadores
+
+        -> + adição
+        -> - subtração
+        -> * multiplicação
+        -> / divisão
+
+    Nota: A divisão inteira não tem um operador definido. Esta acontece
+    automaticamente quando dividimos entre valores do tipo float.
 */
 
 public class Tipos{
     public static void main(String[] args){
-        double d1 = 3.2;
-        double d2 = 3.9999999;
+        double i = 10;
+        double j = 6;
 
-        int i = (int)d1;
-        int j = (int)d2;
-
-        System.out.println(i);
-        System.out.println(j);
+        System.out.println(i/j);
     }
 }
