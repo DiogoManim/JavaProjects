@@ -14,6 +14,12 @@
         main(String[] args):
         -> método que recebe como argumento um array de strings
 
+    A programação orientada a objetos é a aplicação prática das classes 
+    que construimos. Cada classe tem objetos, à semelhança das 
+    estruturas (struct) em C. No entanto, em Java as classes também 
+    podem ter funções/procedimentos (procedimento se for void, função
+    se tiver retorno), aos quais chamamos de métodos.
+
 
     class TestPoint {
         public static void main(String[] args) {

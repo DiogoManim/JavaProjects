@@ -4,11 +4,11 @@ public class palindrome {
 
     public static boolean isPalindrome(String s) {
         
-        s = s.toLowerCase();
+        s = s.toLowerCase().replaceAll("[^a-zA-Z0-9]", "");
         
         int n = s.length();
 
-        for (int i = 0; i < (n/2); ++i) {
+        for (int i = 0, j = 0; i < n; i++, j--) {
             if (s.charAt(i) != s.charAt(n - i - 1)) {
                 return false;
             }
@@ -24,7 +24,10 @@ public class palindrome {
         System.out.println(n);
 
         for (int i = 0; i < n; i++) {
-            if (isPalindrome(in.nextLine()))
+
+            String s = in.nextLine();
+
+            if (isPalindrome(s))
                 System.out.println("sim");
             else
                 System.out.println("nao");
