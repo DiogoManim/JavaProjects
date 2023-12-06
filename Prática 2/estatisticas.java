@@ -28,16 +28,18 @@ public class estatisticas {
     }
 
     public static void main(String[] args) {
-        Scanner stdin = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
 
-        int n = stdin.nextInt();
+        int n = in.nextInt();
         int v[] = new int[n];
 
         for(int i = 0; i < n; i++) {
-            v[i] = stdin.nextInt();
+            v[i] = in.nextInt();
         }
 
         media(v, n);
         amplitude(v);
+
+        in.close();
     }
 }
