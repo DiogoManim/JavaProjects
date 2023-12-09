@@ -464,20 +464,21 @@
         > segunda
 
     Relativamente a formatar o output, temos várias formatos úteis.
-*/
 
-import java.util.Scanner;
+        double p = 3.14;
+        System.out.printf("%f\n", p);
+    
+        > 3.140000
+    
+    Se quisermos com 2 casas decimais:
+
+        double p = 3.14;
+        System.out.printf("%.2f\n", p)
+*/
 
 public class Test {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-
-        int a = in.nextInt();
-        int b = in.nextInt();
-
-        System.out.println(a);
-        System.out.println(b);
-
-        in.close();
+        double p = 3.14;
+        System.out.printf("%f\n", p);
     }
 }

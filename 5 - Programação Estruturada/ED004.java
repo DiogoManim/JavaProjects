@@ -5,13 +5,13 @@ class Game {
     private char m [][];
 
     // Construtor para criar o tabuleiro NxN
-    Game (int n) {
+    public Game (int n) {
         this.n = n;
         m = new char[n][n];
     }
 
     // Método para ler o conteúdo do tabuleiro
-    void read (Scanner in) { 
+    public void read (Scanner in) { 
         for (int i = 0; i < n; i++) {
             String buf = in.next();         // buf = buffer (varíavel)
             for (int j = 0; j < n; j++) {
@@ -21,7 +21,7 @@ class Game {
     }
 
     // Mostra a matriz dada
-    void show() {
+    public void show() {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 System.out.print(m[i][j]);
@@ -32,7 +32,7 @@ class Game {
 
     // Verifica se a linha/diagonal que começa em (x,y) e se está toda 
     // preenchida
-    void verify(int y, int x, int incy, int incx) {     // inc = incremento
+    public void verify(int y, int x, int incy, int incx) {     // inc = incremento
         if (m[y][x] == '.') return;
 
         // Sendo yy e xx os valores que vão variando para verificar se na 
@@ -44,13 +44,13 @@ class Game {
         win(m[y][x]);
     }
 
-    void win(char player) {
+    public void win(char player) {
         System.out.println("Ganhou o " + player);
         System.exit(0);     // Saí do programa (equivale a return 0 no C)
     }
 
     // Verifica o estado do tabuleiro (resolve o prob.)
-    void check() {
+    public void check() {
         for (int i = 0; i < n; i++)
             verify(i, 0, 0, 1); // Linhas
 
@@ -68,7 +68,7 @@ class Game {
     }
 
     // Verifica se o tabuleiro está todo preenchido
-    boolean finished() {
+    public boolean finished() {
         for (int i = 0; i < n; i++)
             for (int j = 0; j < n; j++)
                 if (m[i][j] == '.') 
