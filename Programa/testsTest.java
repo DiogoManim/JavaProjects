@@ -1,8 +1,8 @@
-public class theProgram {
+public class testsTest {
     public static void main(String[] args) {
-        vski prozis = new vski();
+        Test prozis = new Test();
 
-        System.out.println(prozis.viewsYoutube());
+        System.out.println(prozis.views());
         
         System.out.println(prozis.getX());
 

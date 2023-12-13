@@ -1,18 +1,18 @@
-public class vski {
+public class Test {
     private int x;
     private int y;
 
-    public vski() {
+    public Test() {
         this.x = 0;
         this.y = 0;
     }
 
-    public vski(int xvalue, int yvalue) {
+    public Test(int xvalue, int yvalue) {
         this.x = xvalue;
         this.y = yvalue;
     }
 
-    public int viewsYoutube() {
+    public int views() {
         return 12000000;
     }
 
@@ -22,5 +22,10 @@ public class vski {
 
     public void setX(int x) {
         this.x = x;
+    }
+
+    @Override
+    public toString(){
+        
     }
 }

@@ -117,4 +117,77 @@ Tendo a classe definida podemos instanciar objetos desse tipo:
 
     IntSet s = new Xpto();
 
-Como s é do tipo IntSet apenas poderá chamar métodos do interface (mesmo que Xpto implemente outros métodos)
+Como s é do tipo IntSet apenas poderá chamar métodos do interface (mesmo que Xpto implemente outros métodos).
+
+Vamos agora implementar então o interface IntSet como atrás definido.
+
+A primeira coisa a pensar é como implementar.
+
+Existem muitas hipóteses de implementação com diferentes vantagens e desvantagens (Ex: tempo de execução; gastos de memória).
+
+Não existe implementação "perfeita": dependendo do uso, uma pode ser melhor que outra.
+
+Vamos precisamente querer perceber as implementações para perceber os vários tradeoffs e saber escolher a melhor para o nosso caso em particular.
+
+Vamos começar por usar um array. Como implementariamos um IntSet?
+
+    - Vamos manter num array elem uma lista de elementos;
+    - O tamanho do array determina o número máximo de elementos;
+    - Mantemos numa outra variável size o número de elementos.
+
+Por exemplo, o conjunto {1,5,7} seria representado por:
+
+    elem = [1, 5, 7]
+    size = 3
+
+Operacionalizando isto, os atributos seriam:
+
+    // Implementa um conjunto usando um array com lista de elementos
+    class ArrayListIntSet implements IntSet {
+        private int size;
+        private int elem[];
+
+        // (...)
+    }
+
+Os métodos que se seguem são para serem colocados dentro da classe ArrayListIntSet.
+
+Como poderia ser o construtor?
+
+    // Construtor que recebe como argumento o número máximo de elementos
+    ArrayListIntSet(int maxSize) {
+        elem = new int[maxSize];
+        size = 0;
+    }
+
+Para devolver o número de elementos, só precisamos de ir buscar o valor da variável size:
+
+    public int size(){
+        return size;
+    }
+
+Para limpar o conjunto é só colocar a variável size em zero (não é preciso limpar elem[] porque size determina as posições que "interessam"):
+
+    public void clear() {
+        size = 0;
+    }
+
+Como verificar se um elemento está no conjunto?
+
+    public boolean contains(int x) {
+        for (int i = 0; i < size; i++)
+            if (elem[i] == x)
+                return true;
+        return false;
+    }
+
+Como adicionar um elemento? (podemos aproveitar outros métodos, como o contains())
+
+    public boolean add(int x) {
+        if (!contains(x)) {
+            elem[size] = x;
+            size++;
+            return true;
+        }
+        return false;
+    }
