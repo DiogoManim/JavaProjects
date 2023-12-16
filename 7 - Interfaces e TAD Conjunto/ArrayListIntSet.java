@@ -30,11 +30,27 @@ public class ArrayListIntSet implements IntSet {
         }
         return false;
     }
+    
+    public boolean remove(int x) {
+        if (contains(x)) {
+            int pos = 0;
+            while (elem[pos] != x) pos++;
+            size--;
+            elem[pos] = elem[size];
+            return true;
+        }
+        return false;
+    }
 
-
-    // -------------------------------------------
-    // Implementações apenas para deixar compilar
-    // -------------------------------------------
-
-    public boolean remove(int x) {return true;}
+    @Override
+    public String toString() {
+        String res = "{";
+        for (int i = 0; i < size; i++) {
+            if (i > 0)
+                res += ",";
+            res += elem[i];
+        }
+        res += "}";
+        return res;
+    }
 }
