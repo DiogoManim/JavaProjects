@@ -71,6 +71,8 @@ Um exemplo de utilização e do significado das operações:
 
 Por uma questão de simplificação, iremos implementar um conjunto de números inteiros.
 
+---
+
 ## Interface
 
 O Java permite usar a noção de *interface* para especificar uma API (a assinatura dos métodos) sem explicar como implementar:
@@ -227,6 +229,8 @@ Nota:
 
     System.out.println(s);     
     System.out.println(s.toString());
+
+---
 
 ## TAD Conjunto - Vantagens e Desvantagens
 
