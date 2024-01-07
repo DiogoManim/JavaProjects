@@ -1,11 +1,12 @@
 public class Test {
     public static void main(String[] args) {
-        Node<Integer> n = new Node<>(42, null);
+        SinglyLinkedList<Integer> list = new SinglyLinkedList<>();
 
-        System.out.println(n.getValue());
-        System.out.println(n.getNext());
+        list.addFirst(3);
+        list.addFirst(2);
+        list.addFirst(1);
 
-        n.setValue(20);
-        System.out.println(n.getValue());
+        System.out.println(list.size());
+        System.out.println(list.isEmpty());
     }
 }

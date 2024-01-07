@@ -61,3 +61,21 @@ Um nó da lista ficará na classe Node<T> que tem atributos:
     }
 
 Agora falaremos da implementação. A lista em si ficará numa classe chamada SinglyLinkedList&lt;T&gt;.
+
+A lista precisa de uma referência para o primeiro nó da lista. Vamos também guardar o tamanho da lista. Os atributos são portanto:
+
+    - Node<T> first
+    - int size
+
+Métodos padrão para os quais vamos fazer a implementação, são:
+
+    - int size() - devolve número de elementos na lista;
+    - boolean isEmpty() - devolve true se a lista está vazia, false caso contrário;
+    - void addFirst(T value) - adiciona um elemento ao início da lista;
+    - void addLast(T value) - adiciona um elemento ao final da lista;
+    - T getFirst() - devolve o primeiro elemento da lista;
+    - T getLast() - devolve o último elemento da lista;
+    - void removeFirst() - remove o primeiro elemento da lista;
+    - void removeLast() - remove o último elemento da lista;
+    - String toString() - representação em String (para impressão).
+
