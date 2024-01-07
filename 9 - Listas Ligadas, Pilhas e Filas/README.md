@@ -28,4 +28,4 @@ Uma solução: *Listas Ligadas*. Devemos saber as seguintes propriedades da mesm
 
     - O último elemento aponta para o "final" da lista (vamos usar null - o objeto nulo - para denotar o final da lista).
 
-    <img width="612" alt="image" src="https://github.com/DiogoManim/JavaProjects/assets/120724277/68141a98-3d34-43ba-a329-90aa87d1fb9e">
+<img width="612" alt="image" src="https://github.com/DiogoManim/JavaProjects/assets/120724277/68141a98-3d34-43ba-a329-90aa87d1fb9e">
