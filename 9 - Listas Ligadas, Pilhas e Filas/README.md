@@ -60,4 +60,4 @@ Um nó da lista ficará na classe Node<T> que tem atributos:
         public void setNext(Node<T> n) { next = n; }
     }
 
-Agora falaremos da implementação. A lista em si ficará numa classe chamada SinglyLinkedList<T>.
+Agora falaremos da implementação. A lista em si ficará numa classe chamada SinglyLinkedList&lt;T&gt;.
