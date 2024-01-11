@@ -6,7 +6,6 @@ public class Test {
         list.addFirst(2);
         list.addFirst(1);
 
-        System.out.println(list.size());
-        System.out.println(list.isEmpty());
+        System.out.println(list.toString());
     }
 }
