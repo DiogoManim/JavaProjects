@@ -141,6 +141,25 @@ Remover o último é mais complicado porque temos de conseguir chegar à penúlt
 Para converter para String é só percorrer a lista (e ter cuidado com as vírgulas):
 
     // Converte a linha para uma String
+    @Override
     public String toString() {
-        
+        String str = "{";
+        Node<T> cur = last.getNext();
+        for (int i = 0; i < size; i++) {
+            str += cur.getValue();
+            if (cur != last) str += ",";
+            cur = cur.getNext();
+        }
+        str += "}";
+        return str;
     }
+
+## Listas Duplamente Ligadas
+
+Um dos problemas com as listas ligadas anteriores (simples e circular) é que não conseguem remover o último de forma eficiente. Para remover o último precisamos de mudar o next do penúltimo e para chegar ao penúltimo precisamos de percorrer a lista.
+
+Uma maneira de resolve risto é ter em cada nó uma referência para o anterior (para além da referência para o próximo).
+
+É este o conceito de listas duplamente ligadas.
+
+![image](https://github.com/DiogoManim/JavaProjects/assets/120724277/ac66046f-6da1-4dc6-9182-35ef473a398e)
