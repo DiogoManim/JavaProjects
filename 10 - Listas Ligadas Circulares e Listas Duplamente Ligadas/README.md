@@ -18,6 +18,8 @@ Cada processo recebe um pequeno intervalo de tempo (time slot). No final desse i
 
 Outro processo vai ficando ativo e recebendo à vez um time slot seguido de uma ordem cíclica. Novos processos podem ir sendo adicionados e os processos que terminam vão sendo removidos.
 
+![image](https://github.com/DiogoManim/JavaProjects/assets/120724277/94fd9a80-8f61-4233-ac2d-5069b790d29e)
+
 Como poderíamos implementar um algoritmo de round-robin?
 
 Uma hipótese seria usar uma lista ligada simples (SinglyLinkedList &lt;Process&gt; list) e repetidamente fazer o seguinte:
@@ -37,6 +39,8 @@ Vamos mostrar como uma pequena alteração à nossa lista ligada tornaria tudo m
 Uma Lista Ligada Circular é essencialmente uma lista ligada onde o último nó "aponta" para o primeiro.
 
 Vamos implementá-la como CircularLinkedList&lt;T&gt;
+
+![image](https://github.com/DiogoManim/JavaProjects/assets/120724277/ec341d0f-4d46-4692-99b6-297849a9b131)
 
 Os nós são iguais aos da lista ligada simples: Node&lt;T&gt;
 
@@ -163,3 +167,38 @@ Uma maneira de resolve risto é ter em cada nó uma referência para o anterior 
 É este o conceito de listas duplamente ligadas.
 
 ![image](https://github.com/DiogoManim/JavaProjects/assets/120724277/ac66046f-6da1-4dc6-9182-35ef473a398e)
+
+#### Implementação
+
+Os nós têm portanto de ter também referência para o anterior.
+
+    public class DNode<T> {
+        private T value;            // Valor guardado no nó
+        private DNode<T> prev;      // Referência para o nó anterior da lista
+        private DNode<T> next;      // Referência para o próximo nó da lista
+
+        // Construtor
+        DNode(T v, DNode<T> p, DNode<T> n) {
+            value = v;
+            prev = p;
+            next = n;
+        }
+
+        // Getters e Setters
+        public T getValue() { return value; }
+        public DNode<T> getPrev() { return prev; }
+        public DNode<T> getNext() { return next; }
+        public void setValue(T v) { value = v; }
+        public void setPrev(DNode<T> p) { prev = p; }
+        public void setNext(DNode<T> n) { next = n; }
+    }
+
+Para testar todo o código da DoublyLinkedList basta executar TestDoublyLinkedList que está nesta pasta.
+
+Vamos agora abordar uma técnica muito útil usada na implementação. Por vezes quando existem muitos casos excecionais, é mais fácil criar sentinelas. São dados fictícios ("dummy") que nos permitem deixar de ter esses casos limite.
+
+Vamos adicionar dois nós sentinelas: um no início e outro no fim.
+
+Com isto, casos excecionais da lista "vazia" ou tamanho 1 nunca acontecem. Nunca temos de adicionar ao verdadeiro início ou fim, qualquer inserção é sempre no meio de dois nós.
+
+![image](https://github.com/DiogoManim/JavaProjects/assets/120724277/cfe6f41c-6571-41a0-910b-f9c85e441f6d)
