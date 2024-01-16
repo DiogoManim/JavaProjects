@@ -202,3 +202,44 @@ Vamos adicionar dois nós sentinelas: um no início e outro no fim.
 Com isto, casos excecionais da lista "vazia" ou tamanho 1 nunca acontecem. Nunca temos de adicionar ao verdadeiro início ou fim, qualquer inserção é sempre no meio de dois nós.
 
 ![image](https://github.com/DiogoManim/JavaProjects/assets/120724277/cfe6f41c-6571-41a0-910b-f9c85e441f6d)
+
+No início basta criar a lista já com os dois nós sentinelas:
+
+    // Construtor (cria lista vazia com dois nós sentinelas)
+    DoublyLinkedList() {
+        first = new DNode<T>(null, null, null);
+        last = new DNode<T>(null, first, null); // Antes do último vem o 1º
+        first.setNext(last); // A seguir ao primeiro vem o último
+        size = 0;
+    }
+
+![image](https://github.com/DiogoManim/JavaProjects/assets/120724277/4619d76e-0a22-4d1b-97ae-63f4da6ac74b)
+
+Qualquer inserção passa a ser agora inserida entre dois nós. Nunca inserimos antes do primeiro nó sentinela nem nunca inserimos depois do segundo nó sentinela.
+
+Código para inserir entre dois nós:
+
+    // Adiciona elemento entre dois nós n1 e n2
+    private void addBetween(T v, DNode<T> n1, DNode<T> n2) {
+        DNode<T> newNode = new DNode<T>(v, n1, n2);
+        n1.setNext(newNode);
+        n2.setPrev(newNode);
+        size++;
+    } 
+
+![image](https://github.com/DiogoManim/JavaProjects/assets/120724277/5837d885-3b2c-4fa8-843b-d126617772db)
+
+Para inserir no início ou no fim é só chamar o addBetween:
+
+    - addFirst é inserir entre first e first.next
+    - addLast é inserir entre last.prev e last
+
+    // Adiciona v ao início da lista
+    public void addFirst(T v) {
+        addBetween(v, first, first.getNext());
+    }
+
+    // Adiciona v ao final da lista
+    public void addLast(T v) {
+        addBetween(v, last.getPrev(), last);
+    }
