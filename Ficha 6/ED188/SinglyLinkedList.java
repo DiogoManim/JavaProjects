@@ -54,6 +54,7 @@ public class SinglyLinkedList<T> {
         return cur.getValue();      
     }
 
+    // Retorna o valor na posição pos (ou null se não existir essa posição)
     public T get(int pos) {
         Node<T> cur = first;
         if (pos < 0) { return null; }
