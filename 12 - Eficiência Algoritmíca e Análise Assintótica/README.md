@@ -39,3 +39,24 @@ Os métodos das estruturas de dados que temos implementado também são pequenos
 - push e pop no TAD Pilha
 - enqueue e dequeue no TAD Fila
 
+Outros algoritmos podem usar as estruturas de dados como "legos básicos". Exemplos:
+
+- O algoritmo de escalonamento round-robin de processos usa uma lista
+circular.
+- O algoritmo para verificar se uma express˜ao tem os parˆenteses bem
+balanceados usa uma pilha
+- Um algoritmo para simular o atendimento em balc˜oes de um banco, de
+um aeroporto ou de uma loja do cidad˜ao usa uma fila
+
+#### Propriedades desejadas num algoritmo
+
+**Correção**
+Tem de resolver correctamente todas as instâncias do problema.
+
+**Eficiência**
+Performance (tempo e memória) tem de ser adequada
+
+#### Correção de um algoritmo
+
+Um algoritmo correto deve resolver todas as instâncias possíveis (Ex: Para ordenação, números já ordenados, repetidos, ...). Nem sempre é fácil provar a correção de um algoritmo e muito menos é óbvio se um algoritmo está correto.
+
